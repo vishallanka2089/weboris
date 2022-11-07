@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Contact V1</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="new_css.css">
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+		</style>
+	</head>
+	<body>
+		<div class="contact1">
+			<div class="container-contact1">
+				<div class="contact1-pic js-tilt" data-tilt>
+					<img src="image.gif" alt="IMG">
+				</div>
+				<form class="contact1-form validate-form">
+					<span class="contact1-form-title">
+						Get your Lab Worksheets
+					</span>
+					<div class="wrap-input1 validate-input" data-validate="Name is required">
+						<input class="input1" type="text" name="name" placeholder="Roll Number" id="roll" >
+						<span class="shadow-input1"></span>
+					</div>
+					<div class="wrap-input1 validate-input">
+						
+						
+						<select name="cars" id="sub" class="input1">
+							<option value="none" disabled selected>Choose below</option>
+						  <option value="WAD Lab">WAD LAB</option>
+						  <option value="OOSD Lab">OOSD LAB</option>
+						  <option value="PBL Lab">PBL LAB</option>
+						  
+						</select>
+						<span class="shadow-input1"></span>
+
+					</div>
+					<div class="wrap-input1 validate-input" data-validate="Subject is required">
+						<input class="input1" type="text" name="subject" placeholder="Semester" id="sem">
+						<span class="shadow-input1"></span>
+					</div>
+					<div class="wrap-input1 validate-input" data-validate="Name is required">
+						<input class="input1" type="text" name="name" placeholder="Week Number" id="week">
+						<span class="shadow-input1"></span>
+					</div>
+					<div class="container-contact1-form-btn">
+						<button class="contact1-form-btn" id="btn">
+						<span>
+							<a href="#"  target="_blank" id="lin">Fetch Sheet</a>
+							
+							<i class="fa fa-long-arrow-right" aria-hidden="true" style="text-decoration: none"></i>
+						</span>
+						</button>
+					</div>
+				</form>
+			</div>
+			<footer><h3 >Mini App by Ikram & Vishal</h3></footer>
+		</div>
+		<script src="lab.js"></script>
+	</body>
+</html>

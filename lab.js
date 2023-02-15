@@ -24,7 +24,7 @@ document.getElementById("btn").onclick = function () {
 
     let url = `https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/${roll}/LAB/SEM${sem}/${subb}/${roll}_week${week}.pdf`
     console.log(url);
-    document.getElementById("lin").setAttribute("href", url);
+    window.open(url);
 
     
     } else {

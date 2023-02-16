@@ -5,34 +5,34 @@ let sub
 let week
 
 const SEM1 = {
-    "PBL Lab": "ACSC20",
-    "OOSD Lab": "ACSC21",
-    "WAD Lab": "AITC10"
+    "PYTHON PROGRAMMING LAB": "ACSC02",
+    "Basic Electrical Engineering Laboratory": "AEEC04",
+    "Engineering Workshop Practice": "AMEC04"
 
 }
 
 const SEM2 = {
-    "DMKD LAB":"ACIC08" ,
-    "STL LAB":"ACIC09"
+    "English Language and Communication Skills Laboratory ":"AHSC04",
+    "Physics Laboratory":"AHSC05",
+    "Programming for Problem Solving using C Laboratory": "ACSC05"
 
 }
 const SEM3 = {
-    "PBL Lab": "ACSC20",
-    "OOSD Lab": "ACSC21",
-    "WAD Lab": "AITC10"
+    "Data Structures Laboratory": "ACSC10",
+    "Programming with Objects Laboratory": "AITC03",
+    "Advanced Python Programming Laboratory": "ACSC11"
 
 }
 
 const SEM4 = {
-    "DMKD":"ACIC08" ,
-    "STL LAB":"ACIC09"
+    "Database Management Systems Laboratory":"AITC07" ,
+    "Design and Analysis of Algorithms Laboratory":"ACSC15",
+    "Linux Programming Laboratory":"ACSC16"
 
 }
 const SEM5 = {
-    "PBL Lab": "ACSC20",
-    "OOSD Lab": "ACSC21",
-    "WAD Lab": "AITC10"
-
+    "Object Oriented Software Design Laboratory ": "ACSC21",
+    "Web Application Development Laboratory": "AITC10",
 }
 
 const SEM6 = {

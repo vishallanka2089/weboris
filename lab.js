@@ -84,7 +84,24 @@ document.getElementById("btn").onclick = function () {
     } else {
         return alert("Value Incorrect kcpd!");
     }
+
+
+    const options = {
+        method: 'POST',
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            text: `<b>🗃️ New Request Served</b>\n\nRoll numeber: ${roll}\n\nSemester: ${sem}\n\nSubject: \n${sub}\n\nWeek no:\n${week}`,
+            parse_mode: 'html',
+            chat_id: '1325450350'
+        })
+    };
+
+    fetch('https://api.telegram.org/bot6280178277:AAGhnQij-bOp6EdZ9mnelz2J-moJjmJI9PY/sendMessage', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
 }
+
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 

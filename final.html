@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Record</title>
+    <style>
+        /* This CSS code ensures that the iframe fills the entire viewport */
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+      </style>
+</head>
+<body>
+    <iframe src="#" id="frame"></iframe>
+    <script>
+        var url=localStorage.getItem("url");
+        document.getElementById("frame").src=url;
+    </script>
+</body>
+</html>

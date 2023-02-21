@@ -4,6 +4,11 @@ let sem
 let sub
 let week
 
+window.onload = () =>{
+    let save_roll = localStorage.getItem("roll1")
+    document.getElementById("roll").value= save_roll;
+}
+
 const SEM1 = {
     "PYTHON PROGRAMMING LAB": "ACSC02",
     "Basic Electrical Engineering Laboratory": "AEEC04",
@@ -54,7 +59,12 @@ document.getElementById("btn").onclick = function () {
 
     
     roll=document.getElementById("roll").value;
+    localStorage.setItem("roll1",roll);
     
+
+
+
+
     sem=document.getElementById("sem").value;
     sub= document.getElementById("sub").value; 
     week=document.getElementById("week").value;
@@ -65,8 +75,11 @@ document.getElementById("btn").onclick = function () {
 
     let url = `https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/${roll}/LAB/${sem}/${subb}/${roll}_week${week}.pdf`
     console.log(url);
-    window.open(url);
-
+    localStorage.setItem("url",url);
+    
+    window.open("final.html");
+    
+    
     
     } else {
         return alert("Value Incorrect kcpd!");

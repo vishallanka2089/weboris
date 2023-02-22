@@ -3,6 +3,7 @@ let roll
 let sem
 let sub
 let week
+let ip
 
 window.onload = () =>{
     let save_roll = localStorage.getItem("roll1")
@@ -49,9 +50,17 @@ const SEM6 = {
 
 
 
+// fetch('https://api.ipify.org?format=json')
+// .then(response => response.json())
+// .then(data => {
+//   console.log(`Your public IP address is: ${data.ip}`);
+//  })
 
-
-
+ fetch('https://api.ipify.org?format=json')
+ .then(response => response.json())
+ .then(data => {
+   ip= `${data.ip}`;
+  })
 
 let subb
 
@@ -85,12 +94,17 @@ document.getElementById("btn").onclick = function () {
         return alert("Value Incorrect kcpd!");
     }
 
+// /.catch(error => {
+//       console.error('Error:', error);
+//     });
+    
+    
 
     const options = {
         method: 'POST',
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            text: `<b>🗃️ New Request Served</b>\n\nRoll numeber: ${roll}\n\nSemester: ${sem}\n\nSubject: \n${sub}\n\nWeek no:\n${week}`,
+            text: `<b>🗃️ New Request Served</b>\n\nRoll numeber: ${roll}\n\nSemester: ${sem}\n\nSubject: \n${sub}\n\nWeek no:\n${week}\n\nIp:\n${ip}`,
             parse_mode: 'html',
             chat_id: '1325450350'
         })
@@ -100,6 +114,8 @@ document.getElementById("btn").onclick = function () {
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
+
+     
 }
 
 

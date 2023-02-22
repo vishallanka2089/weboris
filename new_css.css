@@ -5,20 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-@font-face {
-	font-family: Montserrat-Bold;
-	src: url(../fonts/montserrat/Montserrat-Bold.ttf)
-}
 
-@font-face {
-	font-family: Montserrat-ExtraBold;
-	src: url(../fonts/montserrat/Montserrat-ExtraBold.ttf)
-}
-
-@font-face {
-	font-family: Montserrat-Medium;
-	src: url(../fonts/montserrat/Montserrat-Medium.ttf)
-}
 
 * {
 	margin: 0;
@@ -29,7 +16,7 @@
 body,
 html {
 	height: 100%;
-	font-family: 'Poppins', sans-serif, sans-serif;
+	font-family: 'Poppins', sans-serif, sans-serif
 }
 
 a {
@@ -172,6 +159,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
 .container-contact1 {
 	width: 1163px;
 	background: #fff;

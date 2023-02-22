@@ -20,9 +20,10 @@
 <body>
     <iframe src="" id="frame"></iframe>
     <script>
-        var url=localStorage.getItem("url");
-        let gpdf_url = "https://docs.google.com/viewer?url="+url+"&embedded=true"
-        document.getElementById("frame").src=gpdf_url;
+      
+         var url=localStorage.getItem("url");
+        <!-- let gpdf_url = "https://docs.google.com/viewer?url="+url+"&embedded=true"  -->
+        document.getElementById("frame").src=url;
     </script>
 </body>
 </html>

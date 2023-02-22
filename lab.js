@@ -60,9 +60,12 @@ const SEM6 = {
  .then(response => response.json())
  .then(data => {
    ip= `${data.ip}`;
+   //localStorage.setItem('ip',ip);
+   console.log(ip);
   })
 
 let subb
+let ip_address = localStorage.getItem('ip');
 
 document.getElementById("btn").onclick = function () {
 

@@ -1,4 +1,3 @@
-
 let roll 
 let sem
 let sub
@@ -47,44 +46,26 @@ const SEM6 = {
 
 }
 
-
-
-
-// fetch('https://api.ipify.org?format=json')
-// .then(response => response.json())
-// .then(data => {
-//   console.log(`Your public IP address is: ${data.ip}`);
-//  })
-
  fetch('https://api.ipify.org?format=json')
  .then(response => response.json())
  .then(data => {
    ip= `${data.ip}`;
-   //localStorage.setItem('ip',ip);
+   localStorage.setItem('ip',ip);
    console.log(ip);
   })
 
 let subb
 let ip_address = localStorage.getItem('ip');
 
-document.getElementById("btn").onclick = function () {
-
-    
+document.getElementById("btn").onclick = function () {  
     roll=document.getElementById("roll").value;
     localStorage.setItem("roll1",roll);
-    
-
-
-
-
     sem=document.getElementById("sem").value;
     sub= document.getElementById("sub").value; 
     week=document.getElementById("week").value;
     roll = roll.toUpperCase()
     subb=eval(sem)[sub]
     if (roll.includes('95')) {
-    // return `https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/${roll}/LAB/${sem}/${eval(subjects[sub])}/${roll}_week${week}.pdf`;
-
     let url = `https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/${roll}/LAB/${sem}/${subb}/${roll}_week${week}.pdf`
     console.log(url);
     localStorage.setItem("url",url);
@@ -97,17 +78,11 @@ document.getElementById("btn").onclick = function () {
         return alert("Value Incorrect kcpd!");
     }
 
-// /.catch(error => {
-//       console.error('Error:', error);
-//     });
-    
-    
-
     const options = {
         method: 'POST',
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            text: `<b>🗃️ New Request Served</b>\n\nRoll numeber: ${roll}\n\nSemester: ${sem}\n\nSubject: \n${sub}\n\nWeek no:\n${week}\n\nIp:\n${ip}`,
+            text: `<b>🗃️ New Request Served</b>\n\nRoll numeber: ${roll}\n\nSemester: ${sem}\n\nSubject: \n${sub}\n\nWeek no:\n${week}\n\nIp:\n${localStorage.getItem('ip')}`,
             parse_mode: 'html',
             chat_id: '1325450350'
         })
@@ -124,7 +99,6 @@ document.getElementById("btn").onclick = function () {
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 
-
 function sub_sem() {
     semester = document.querySelector('#sem').value;
     let html = "";
@@ -136,6 +110,3 @@ function sub_sem() {
     document.getElementById('sub').innerHTML = html;
 
 }
-
-
-

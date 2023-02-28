@@ -1,1 +1,154 @@
-let roll,sem,sub,week,ip;window.onload=()=>{let e=localStorage.getItem("roll1");document.getElementById("roll").value=e};const SEM1={"PYTHON PROGRAMMING LAB":"ACSC02","Basic Electrical Engineering Laboratory":"AEEC04","Engineering Workshop Practice":"AMEC04"},SEM2={"English Language and Communication Skills Laboratory ":"AHSC04","Physics Laboratory":"AHSC05","Programming for Problem Solving using C Laboratory":"ACSC05"},SEM3={"Data Structures Laboratory":"ACSC10","Programming with Objects Laboratory":"AITC03","Advanced Python Programming Laboratory":"ACSC11"},SEM4={"Database Management Systems Laboratory":"AITC07","Design and Analysis of Algorithms Laboratory":"ACSC15","Linux Programming Laboratory":"ACSC16"},SEM5={"Object Oriented Software Design Laboratory ":"ACSC21","Web Application Development Laboratory":"AITC10"},SEM6={"DMKD LAB":"ACIC08","STL LAB":"ACIC09"};let subb;fetch("https://api.ipify.org?format=json").then((e=>e.json())).then((e=>{ip=`${e.ip}`,localStorage.setItem("ip",ip),console.log(ip)}));let ip_address=localStorage.getItem("ip");function sub_sem(){semester=document.querySelector("#sem").value;let html="";for(let i=0;i<Object.keys(eval(semester)).length;i++)line=`<option value="${Object.keys(eval(semester))[i]}">${Object.keys(eval(semester))[i]}</option>`,html+=line;document.getElementById("sub").innerHTML=html}document.getElementById("btn").onclick=function(){if(roll=document.getElementById("roll").value,localStorage.setItem("roll1",roll),sem=document.getElementById("sem").value,sub=document.getElementById("sub").value,week=document.getElementById("week").value,roll=roll.toUpperCase(),subb=eval(sem)[sub],!roll.includes("95"))return alert("Value Incorrect kcpd!");{let e=`https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/${roll}/LAB/${sem}/${subb}/${roll}_week${week}.pdf`;console.log(e),localStorage.setItem("url",e),window.open("final.html")}const options={method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify({text:`<b>🗃️ New Request Served</b>\n\nRoll numeber: ${roll}\n\nSemester: ${sem}\n\nSubject: \n${sub}\n\nWeek no:\n${week}\n\nIp:\n${localStorage.getItem("ip")}`,parse_mode:"html",chat_id:"1325450350"})};fetch("https://api.telegram.org/bot6280178277:AAGhnQij-bOp6EdZ9mnelz2J-moJjmJI9PY/sendMessage",options).then((e=>e.json())).then((e=>console.log(e))).catch((e=>console.error(e)))},document.addEventListener("contextmenu",(e=>e.preventDefault()));
+let roll;
+let sem;
+let sub;
+let week;
+let ip;
+
+window.onload = () => {
+  let save_roll = localStorage.getItem("roll1");
+  document.getElementById("roll").value = save_roll;
+};
+
+const SEM1 = {
+  "PYTHON PROGRAMMING LAB": "ACSC02",
+  "Basic Electrical Engineering Laboratory": "AEEC04",
+  "Engineering Workshop Practice": "AMEC04",
+};
+
+const SEM2 = {
+  "English Language and Communication Skills Laboratory ": "AHSC04",
+  "Physics Laboratory": "AHSC05",
+  "Programming for Problem Solving using C Laboratory": "ACSC05",
+};
+const SEM3 = {
+  "Data Structures Laboratory": "ACSC10",
+  "Programming with Objects Laboratory": "AITC03",
+  "Advanced Python Programming Laboratory": "ACSC11",
+};
+
+const SEM4 = {
+  "Database Management Systems Laboratory": "AITC07",
+  "Design and Analysis of Algorithms Laboratory": "ACSC15",
+  "Linux Programming Laboratory": "ACSC16",
+};
+const SEM5 = {
+  "Object Oriented Software Design Laboratory ": "ACSC21",
+  "Web Application Development Laboratory": "AITC10",
+};
+
+const SEM6 = {
+  "DMKD LAB": "ACIC08",
+  "STL LAB": "ACIC09",
+};
+
+fetch("https://api.ipify.org?format=json")
+  .then((response) => response.json())
+  .then((data) => {
+    ip = `${data.ip}`;
+    localStorage.setItem("ip", ip);
+    console.log(ip);
+  });
+
+let subb;
+let ip_address = localStorage.getItem("ip");
+
+document.getElementById("btn").onclick = function () {
+  roll = document.getElementById("roll").value;
+  localStorage.setItem("roll1", roll);
+  sem = document.getElementById("sem").value;
+  sub = document.getElementById("sub").value;
+  week = document.getElementById("week").value;
+  roll = roll.toUpperCase();
+  subb = eval(sem)[sub];
+
+  if (roll.includes("95")) {
+    let url = `https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/${roll}/LAB/${sem}/${subb}/${roll}_week${week}.pdf`;
+    console.log(url);
+    localStorage.setItem("url", url);
+    console.log("url");
+
+    // window.open("final.html");
+  } else {
+    return alert("Value Incorrect kcpd!");
+  }
+
+  // const xhr = new XMLHttpRequest();
+  // xhr.open('GET', url);
+  // xhr.onload = function() {
+  //   if (xhr.status === 200) {
+
+  //     window.open("final.html");
+  //   } else {
+  //     window.alert("error");
+  //   }
+  // };
+  // xhr.onerror = function() {
+  //   console.error('Network error');
+  // };
+  // xhr.send();
+
+  fetch(localStorage.getItem('url'))
+    .then(response => {
+        console.log(`Response is ${response.status}`);
+        if (response.ok) {
+            window.open("final.html");
+        }
+        else {
+            window.alert("Not uploaded");
+        }
+    })
+    .catch(error => {
+        console.error(`This is an ${error}`);
+    })
+
+
+//   fetch(url).then(function (response) {
+//     console.log(response.status);
+//     if (response.status == 200) {
+//       window.open("final.html");                                                       
+//     } else {
+//       window.alert("Not uploaded");
+//     }
+//   });
+  //   .then(function(data) {
+  //     // Do something with the response data
+  //   })
+  //   .catch(function(error) {
+  //     console.error('There was a problem with the fetch operation:', error);
+  //   });
+
+  const options = {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify({
+      text: `<b>🗃️ New Request Served</b>\n\nRoll numeber: ${roll}\n\nSemester: ${sem}\n\nSubject: \n${sub}\n\nWeek no:\n${week}\n\nIp:\n${localStorage.getItem(
+        "ip"
+      )}`,
+      parse_mode: "html",
+      chat_id: "1325450350",
+    }),
+  };
+
+  fetch(
+    "https://api.telegram.org/bot6280178277:AAGhnQij-bOp6EdZ9mnelz2J-moJjmJI9PY/sendMessage",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+};
+
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+function sub_sem() {
+  semester = document.querySelector("#sem").value;
+  let html = "";
+  for (let i = 0; i < Object.keys(eval(semester)).length; i++) {
+    line = `<option value="${Object.keys(eval(semester))[i]}">${
+      Object.keys(eval(semester))[i]
+    }</option>`;
+    html += line;
+  }
+  //console.log(html);
+  document.getElementById("sub").innerHTML = html;
+}

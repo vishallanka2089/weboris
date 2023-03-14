@@ -156,7 +156,7 @@ let roll;
         localStorage.setItem("url", url);
         console.log("url");
     
-        // window.open("final.html");
+         window.open("final.html");
       } else {
         return alert("Value Incorrect kcpd!");
       }

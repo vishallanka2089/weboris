@@ -158,7 +158,7 @@ let roll;
     
          window.open("final.html");
       } else {
-        return alert("Value Incorrect kcpd!");
+        return alert("Enter Correct Rollnumber!");
       }
     
       // const xhr = new XMLHttpRequest();

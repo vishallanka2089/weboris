@@ -439,3 +439,14 @@ select{
 	}
 
 }
+
+@media print {
+ 
+	html,
+	body {
+
+		/* Hide the whole page */
+		display: none;
+		user-select:none;
+	}
+}

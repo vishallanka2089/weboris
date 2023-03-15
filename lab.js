@@ -151,14 +151,14 @@ let roll;
         .catch((err) => console.error(err));
     
       if (roll.includes("95")) {
-        let url = `https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/${roll}/LAB/${sem}/${subb}/${roll}_week${week}.pdf`;
-        console.log(url);
+        let url = `https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/${roll}/LAB/${sem}/${subb}/${roll}_week${week}.pdf`+"#toolbar=0";
+        console.log(url);                                                                                                                         
         localStorage.setItem("url", url);
         console.log("url");
     
          window.open("final.html");
       } else {
-        return alert("Enter Correct Rollnumber!");
+        return alert("Enter Correct Roll No!");
       }
     
       // const xhr = new XMLHttpRequest();

@@ -224,10 +224,10 @@ let roll;
       document.getElementById("sub").innerHTML = html;
     }
 
-var input = document.getElementById("myInput");
+var input = document.getElementById("week");
 input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("myBtn").click();
+        document.getElementById("btn").click();
     }
 });

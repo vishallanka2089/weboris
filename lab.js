@@ -224,8 +224,7 @@ let roll;
       document.getElementById("sub").innerHTML = html;
     }
 
-var input = document.getElementById("week");
-input.addEventListener("keyup", function(event) {
+document.body.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("btn").click();

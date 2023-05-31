@@ -69,6 +69,7 @@ let roll;
         "Concrete Technology Laboratory":"ACEC11",
         "Hydraulics and Hydraulic Machinery Laboratory":"ACEC12",
         "Strength of Materials Laboratory":"ACEC13",
+         "Foundations of Machine Learning Lab":"ACAC04",
       };
       const SEM5 = {
         "Object Oriented Software Design Laboratory ": "ACSC21",
